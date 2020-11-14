@@ -21,7 +21,7 @@ The second line of each part contains space separated list of elements in the ot
 Output Format
 
 Output the sum of elements in set A.*/
------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 a=set()
 b=set()
 sum=0
@@ -64,7 +64,7 @@ for i in a:
     sum+=i
 
 print(sum)
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /* TASK
 Mr. Anant Asankhya is the manager at the INFINITE hotel. The hotel has an infinite amount of rooms.
 
@@ -118,3 +118,54 @@ for i in range(len(people_room_no)):
             pass
         else:
             print(people_room_no[i])
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* TASK
+You are given two sets, A and B.
+Your job is to find whether set A is a subset of set B.
+
+If set A is subset of set B, print True.
+If set A is not a subset of set B, print False.
+
+Input Format
+
+The first line will contain the number of test cases, .
+The first line of each test case contains the number of elements in set A.
+The second line of each test case contains the space separated elements of set A.
+The third line of each test case contains the number of elements in set B.
+The fourth line of each test case contains the space separated elements of set B.
+
+Output Format
+
+True is A is subset of B
+False if A is not a subset of B
+*/
+
+number_of_test_cases = int(input())
+
+for i in range(number_of_test_cases):
+    A=set()
+    B=set()
+    number_of_elements_A = int(input())
+    counter=0
+    for i in input().split():
+        counter+=1
+        if counter<=number_of_elements_A:
+            A.add(int(i))
+        else:
+            pass
+        
+    number_of_elements_B = int(input())
+    counter=0
+    for i in input().split():
+        counter+=1
+        if counter<=number_of_elements_B:
+            B.add(int(i))
+        else:
+            pass
+    
+    C = A-B
+
+    if len(C)==0:
+        print('True')
+    else:
+     print('False')
