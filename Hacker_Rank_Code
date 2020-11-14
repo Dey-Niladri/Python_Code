@@ -1,0 +1,66 @@
+-- HackerRank Set problem 
+
+/* TASK
+You are given a set A and N number of other sets. These N number of sets have to perform some specific mutation operations on set A.
+
+Your task is to execute those operations and print the sum of elements from set .
+
+Input Format
+
+The first line contains the number of elements in set A.
+The second line contains the space separated list of elements in set .
+The third line contains N integer , the number of other sets.
+The next 2*N lines are divided into N parts containing two lines each.
+The first line of each part contains the space separated entries of the operation name and the length of the other set.
+The second line of each part contains space separated list of elements in the other set.
+
+ 0 < len(set(A)) < 1000
+ 0 < len(otherSets) < 100
+ 0 < N < 100
+
+Output Format
+
+Output the sum of elements in set A.*/
+-----------------------------------------------------------------------------------------------------------------------------------------
+a=set()
+b=set()
+sum=0
+
+def read_STDIN(x):
+    
+    for i in input().split():
+        x.add(int(i))
+
+number_of_arguments = int(input())
+
+read_STDIN(a)
+
+number_of_arguments = int(input())
+
+for i in range(number_of_arguments):
+    b=set()
+    command = input().split(' ')[0]
+    
+		if command == 'update':
+        read_STDIN(b)
+        a.update(b)
+        
+    elif command == 'intersection_update':
+        read_STDIN(b)
+        a.intersection_update(b)
+        
+    elif command == 'difference_update':
+        read_STDIN(b)
+        a.difference_update(b)
+        
+    elif command == 'symmetric_difference_update':
+        read_STDIN(b)
+        a.symmetric_difference_update(b)
+        
+    else:
+        print()
+
+for i in a:
+    sum+=i
+
+print(sum)
