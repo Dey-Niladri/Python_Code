@@ -88,7 +88,7 @@ The second line contains the unordered elements of the room number list.
 
 
 Constraints
-
+1 < K < 1000
 
 Output Format
 
