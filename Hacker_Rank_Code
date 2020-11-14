@@ -21,7 +21,7 @@ The second line of each part contains space separated list of elements in the ot
 Output Format
 
 Output the sum of elements in set A.*/
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 a=set()
 b=set()
 sum=0
@@ -169,3 +169,42 @@ for i in range(number_of_test_cases):
         print('True')
     else:
      print('False')
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* TASK
+You are given a set A and n other sets.
+Your job is to find whether set A is a strict superset of each of the N sets.
+
+Print True, if A is a strict superset of each of the N sets. Otherwise, print False.
+
+A strict superset has at least one element that does not exist in its subset.
+
+Input Format
+
+The first line contains the space separated elements of set .
+The second line contains integer , the number of other sets.
+The next  lines contains the space separated elements of the other sets.
+
+Output Format
+
+Print True if set A is a strict superset of all other N sets. Otherwise, print False.
+*/
+
+A=set()
+for i in input().split():
+    A.add(int(i))
+
+n = int(input())
+for i in range(n):
+    B=set()
+    for i in input().split():
+        B.add(int(i))
+    
+    if len(A-B)>0 and len(B-A) == 0:
+        is_superset=True
+    else:
+        is_superset=False
+        print('False')
+        break
+if is_superset:
+    print('True')
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
