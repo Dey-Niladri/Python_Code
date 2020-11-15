@@ -502,3 +502,47 @@ if __name__ == '__main__':
 
     print(result)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* TASK
+There are 2 playes : Kevin and Stuart. They are playing 'The Minion Game'
+
+Rules of the game :
+
+Each of Kevin and Stuart start making substrings with a given string S
+Kevin makes substrings starting only with Vowels
+Stuart makes substrings starting with consonants
+Each word they make earn them a score of +1
+Repititions are considered as unique and thus earn points
+At the end, person with more score wins
+
+Input :
+A string S
+
+Output :
+Name of the wineer and their score (e.g : Kevin 12)
+*/
+
+Kevin_Score=0
+Stuart_Score=0
+Alphabet_List=list(string.ascii_uppercase)
+Vowel_List=['A','E','I','O','U']
+Consonant_List=list(set(Alphabet_List)-set(Vowel_List))
+
+arr=[i for i in input()]
+
+Len_Arr=len(arr)
+
+for i in range(0,Len_Arr,1):
+    if arr[i] in Vowel_List:
+        Kevin_Score+=Len_Arr-i
+    elif arr[i] in Consonant_List:
+        Stuart_Score+=Len_Arr-i
+    else:
+        print('Only Upper Case Alphabets are allowed.')
+
+if Kevin_Score>Stuart_Score:
+    print('Kevin',Kevin_Score)
+elif Kevin_Score<Stuart_Score:
+    print('Stuart',Stuart_Score)
+else:
+    print('Draw')
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
