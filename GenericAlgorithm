@@ -1,0 +1,48 @@
+--Generic Code for calculating Matrix Multiplication : Matrix A : n*m and Matrix B : r*c
+
+n,m=input('Enter the dimension of matrix A : ').split()
+n=int(n)
+m=int(m)
+
+r,c=input('Enter the dimension of matrix B : ').split()
+r=int(r)
+c=int(c)
+
+if m!=r:
+    print('Error !')
+    exit()
+
+A=[[0 for j in range(m)] for i in range(n)]
+B=[[0 for i in range(c)] for j in range(r)]
+C=[[0 for i in range(c)] for j in range(n)]
+
+print('Enter the values for {}*{} matrix A : '.format(n,m))
+
+input_str=''
+
+for i in range(n):
+    input_str=input().split()
+    for j in range(m):
+        A[i][j]=int(input_str[j])
+print(A)
+
+print('Enter the values for {}*{} matrix B : '.format(r,c))
+
+input_str=''
+
+for i in range(r):
+    input_str=input().split()
+    for j in range(c):
+        B[i][j]=int(input_str[j])
+print(B)
+
+for i in range(n):
+    sum=0
+    for j in range(c):
+        sum=0
+        for k in range(m):
+            sum+=A[i][k]*B[k][j]
+        C[i][j]=sum
+print('The Matrix Product of Matrix A and Matrix B is : ')
+for i in C:
+    print(i)
