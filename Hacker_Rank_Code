@@ -643,3 +643,67 @@ B = numpy.array([i for i in input().split()],int)
 
 print(numpy.inner(A,B))
 print(numpy.outer(A,B))
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* TASK
+You are given the coefficients of a polynomial P.
+Your task is to find the value of P at point x.
+
+Input Format
+
+The first line contains the space separated value of the coefficients in P.
+The second line contains the value of x.
+
+Output Format
+
+Print the desired value.
+*/
+
+import numpy
+polynomial = numpy.array([float(i) for i in input().split()])
+eval_value = float(input())
+print(numpy.polyval(polynomial, eval_value) )
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* TASK
+Compute the determinant of a N x N matrix
+*/
+
+import numpy
+N=int(input())
+A=numpy.array([input().split() for i in range(N)],float)
+print(round(numpy.linalg.det(A), 2))
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* TASK
+You are given an integer N followed by N email addresses. Your task is to print a list containing only valid email addresses in lexicographical order.
+
+
+Valid email addresses must follow these rules:
+
+It must have the username@websitename.extension format type.
+The username can only contain letters, digits, dashes and underscores.
+The website name can only have letters and digits.
+The maximum length of the extension is .
+
+*/
+
+import re
+
+pattern = re.compile("^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]+\...?.?$")
+
+def fun(s):
+    if bool(pattern.match(s)):
+        return s
+    else:
+        pass
+
+def filter_mail(emails):
+    return list(filter(fun, emails))
+
+if __name__ == '__main__':
+    n = int(input())
+    emails = []
+    for _ in range(n):
+        emails.append(input())
+
+filtered_emails = filter_mail(emails)
+filtered_emails.sort()
+print(filtered_emails)
